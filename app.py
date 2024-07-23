@@ -5,14 +5,12 @@ app = Flask(__name__)
 
 model_name = "distilbert-base-cased-distilled-squad"
 
-# a) Get predictions
-nlp = pipeline('question-answering', model=model_name, tokenizer=model_name)
-
-# b) Load model & tokenizer
-model = model_name
-
-with open('D:\Hugging_Face\Question-Answering\context.txt', 'r', encoding='utf-8') as file:
+# Load the context from the file
+with open(r'D:/Question-Answering/context.txt', 'r', encoding='utf-8') as file:
     context = file.read()
+
+# Initialize the question-answering pipeline
+nlp = pipeline('question-answering', model=model_name, tokenizer=model_name)
 
 @app.route('/')
 def answer_question():
@@ -32,4 +30,4 @@ def answer_question():
     return render_template('index.html', answer=answer)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
