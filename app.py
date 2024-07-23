@@ -6,7 +6,7 @@ app = Flask(__name__)
 model_name = "distilbert-base-cased-distilled-squad"
 
 # Load the context from the file
-with open(r'D:/Question-Answering/context.txt', 'r', encoding='utf-8') as file:
+with open(r'', 'r', encoding='utf-8') as file:
     context = file.read()
 
 # Initialize the question-answering pipeline
