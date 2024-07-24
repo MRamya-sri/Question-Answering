@@ -7,8 +7,11 @@ app = Flask(__name__)
 
 model_name = "distilbert-base-cased-distilled-squad"
 
-# Create a ThreadPoolExecutor for running the model in separate threads
-executor = ThreadPoolExecutor(max_workers=4)
+
+# Load the context from the file
+with open(r'', 'r', encoding='utf-8') as file:
+    context = file.read()
+
 
 # Load model & tokenizer (do this once at startup)
 nlp = pipeline('question-answering', model=model_name, tokenizer=model_name)
