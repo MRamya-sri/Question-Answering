@@ -18,14 +18,14 @@ This repository contains a Flask web application that leverages the Hugging Face
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/question-answering-flask-app.git
+    git clone https://github.com/MRamya-sri/question-answering-flask-app.git
     cd question-answering-flask-app
     ```
 
 2. Create and activate a virtual environment:
     ```sh
     python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    venv\Scripts\activate
     ```
 
 3. Install the required packages:
